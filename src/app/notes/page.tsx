@@ -116,7 +116,7 @@ export default function NotesPage() {
 
   if (isUserLoading || !user) {
     return (
-      <div className="flex h-dvh w-full items-center justify-center bg-background">
+      <div className="flex h-dvh w-full items-center justify-center bg-transparent">
         <Loader2 className="h-12 w-12 animate-spin text-primary" />
       </div>
     );
@@ -124,9 +124,9 @@ export default function NotesPage() {
 
   return (
     <>
-      <div className="flex h-dvh w-full bg-background overflow-hidden">
-        <aside className="flex flex-col w-full shrink-0 md:w-[320px] border-r bg-muted/20">
-          <header className="flex items-center justify-between gap-2 px-4 h-16 border-b shrink-0">
+      <div className="flex h-dvh w-full bg-transparent overflow-hidden p-4">
+        <aside className="flex flex-col w-full shrink-0 md:w-[320px] border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg rounded-l-xl">
+          <header className="flex items-center justify-between gap-2 px-4 h-16 border-b border-white/20 shrink-0">
              <div className="flex items-center gap-2">
                 <StickyNote className="h-6 w-6 text-primary" />
                 <h1 className="text-xl font-bold tracking-tight text-foreground">QuickNote</h1>
@@ -140,7 +140,7 @@ export default function NotesPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search by title..."
-                className="pl-9 bg-background"
+                className="pl-9 bg-white/10 border-white/20"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -154,9 +154,9 @@ export default function NotesPage() {
              {isLoadingNotes ? (
                <div className="p-4 space-y-2">
                  {[...Array(5)].map((_, i) => (
-                   <div key={i} className="p-3 rounded-lg bg-background/50">
-                     <div className="h-4 w-3/4 rounded bg-muted animate-pulse mb-2"></div>
-                     <div className="h-3 w-full rounded bg-muted animate-pulse"></div>
+                   <div key={i} className="p-3 rounded-lg bg-white/10">
+                     <div className="h-4 w-3/4 rounded bg-muted/50 animate-pulse mb-2"></div>
+                     <div className="h-3 w-full rounded bg-muted/50 animate-pulse"></div>
                    </div>
                  ))}
                </div>
@@ -171,7 +171,7 @@ export default function NotesPage() {
                             "w-full text-left p-3 rounded-lg transition-colors text-sm",
                             activeNoteId === note.id
                               ? "bg-accent text-accent-foreground"
-                              : "hover:bg-accent/50"
+                              : "hover:bg-white/10"
                           )}
                         >
                           <p className="truncate font-semibold">{note.title}</p>
@@ -185,10 +185,10 @@ export default function NotesPage() {
           </ScrollArea>
         </aside>
 
-        <main className="flex-1 flex-col hidden md:flex">
+        <main className="flex-1 flex-col hidden md:flex bg-white/5 border-t border-b border-r border-white/20 backdrop-blur-lg rounded-r-xl">
           {activeNote ? (
             <>
-              <header className="flex items-center justify-between p-4 h-16 border-b shrink-0">
+              <header className="flex items-center justify-between p-4 h-16 border-b border-white/20 shrink-0">
                 <div>
                   <h2 className="text-2xl font-bold">{activeNote.title}</h2>
                    {activeNote.createdAt && (

@@ -23,7 +23,7 @@ export default function LoginPage() {
 
   if (isUserLoading || user) {
     return (
-      <div className="flex h-dvh w-full flex-col items-center justify-center bg-background">
+      <div className="flex h-dvh w-full flex-col items-center justify-center bg-transparent">
         <Loader2 className="h-12 w-12 animate-spin text-primary" />
         <p className="mt-4 text-muted-foreground">Loading...</p>
       </div>
@@ -31,8 +31,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex h-dvh w-full flex-col items-center justify-center bg-background p-8 text-center">
-      <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-6 rounded-2xl border bg-card p-8 shadow-sm">
+    <div className="flex h-dvh w-full flex-col items-center justify-center bg-transparent p-8 text-center">
+      <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-6 rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg backdrop-blur-lg">
         <div className="flex items-center gap-3">
           <StickyNote className="h-8 w-8 text-primary" />
           <h1 className="text-3xl font-bold tracking-tight text-foreground">
