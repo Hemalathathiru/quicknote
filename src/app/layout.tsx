@@ -21,7 +21,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn("font-body antialiased", "bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900")}>
+      <body className={cn("font-body antialiased", "bg-gradient-to-br from-sky-900 via-slate-900 to-cyan-900")}>
         <div className="absolute top-0 left-0 h-full w-full bg-black/30 z-[-1]"></div>
         <FirebaseClientProvider>
           {children}
